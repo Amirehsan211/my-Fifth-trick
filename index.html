@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            min-height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+
+            >.sun {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: gold;
+                box-shadow: 0 0 200px 10px goldenrod;
+                transform: translatez(325px);
+            }
+
+            .orbit {
+                width: 700px;
+                height: 700px;
+                border: 1px solid rgba(255, 255, 255, 0.307);
+                position: absolute;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform:translate3d(-50%, -50%,325px)rotateX(80deg) ;
+                border-radius: 50%;
+                transform-style: preserve-3d;
+
+                >.earth {
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                    background-color: rgba(165, 42, 42, 0);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 50%;
+                    transform: translate(-400px, -50%);
+                    animation: myearth linear infinite 25s;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transform-origin: 400px 50%;
+                    transform-style: preserve-3d;
+                    >div{
+                        width: 80%;
+                        height: 80%;
+                        background-image: url(images\ \(2\).jfif);
+                        background-size: auto 100%  ;
+                        border-radius: 50%;
+                        transform: rotatex(90deg);
+                        animation: myearth2 linear infinite 25s;
+                        box-shadow: 0 0 12px 1px rgba(155, 133, 206, 0.347);
+                    }
+
+                }
+            }
+
+       
+        }
+
+        @keyframes myearth {
+            to {
+                transform: translate(-400px, 50%)rotate(360deg);
+            }
+        }
+        @keyframes myearth2 {
+            to{transform:rotatex(90deg) rotatey(-360deg);
+            background-position:-200px;
+            }
+           
+        }
+    </style>
+</head>
+
+<body class="back">
+    <section>
+
+        <div class="sun"></div>
+        <div class="orbit">
+            <div class="earth">
+                <div></div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>
